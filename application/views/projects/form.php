@@ -81,12 +81,12 @@
         
         <div class="mb-3">
         <label for="lokasi" class="form-label">Lokasi</label>
-        <select class="form-control" id="lokasi_id" name="lokasi[]" >
-            <option value=1>Lokasi 1</option>
-            <option value=2>Lokasi 2</option>
-            <option value=3>Lokasi 3</option>
-            <!-- Add more options as needed -->
-        </select>
+        <select class="form-control" id="lokasi_id" name="lokasi_id[]" >
+        <?php foreach ($lokasi as $location): ?>
+            <option value="<?php echo $location['id']; ?>"><?php echo $location['id']; ?></option>
+        <?php endforeach; ?>
+</select>
+
 </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
