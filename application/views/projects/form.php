@@ -51,7 +51,7 @@
 
 <section class="container">
     <h1>Form Tambah Proyek</h1>
-    <form id="projectForm">
+    <form method="post" action="<?php echo site_url('index.php/projects/submit_form'); ?>">
         <div class="mb-3">
             <label for="nama_proyek" class="form-label">Nama Proyek</label>
             <input type="text" class="form-control" id="nama_proyek" aria-describedby="emailHelp" name="nama_proyek">
@@ -71,20 +71,27 @@
         </div>
 
          <div class="mb-3">
-            <label for="keterangan" class="form-label">keterangan</label>
+            <label for="pimpinan_proyek" class="form-label">Pimpinan Proyek</label>
+            <input type="text" class="form-control" id="pimpinan_proyek" name="pimpinan_proyek">
+        </div>
+         <div class="mb-3">
+            <label for="keterangan" class="form-label">Keterangan</label>
             <input type="text" class="form-control" id="keterangan" name="keterangan">
         </div>
+        
         <div class="mb-3">
         <label for="lokasi" class="form-label">Lokasi</label>
-        <select class="form-control" id="lokasi" name="lokasi[]">
-            <option value="1">Lokasi 1</option>
-            <option value="2">Lokasi 2</option>
+        <select class="form-control" id="lokasi_id" name="lokasi[]" >
+            <option value=1>Lokasi 1</option>
+            <option value=2>Lokasi 2</option>
+            <option value=3>Lokasi 3</option>
             <!-- Add more options as needed -->
         </select>
 </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <script>
+
+    <!-- <script>
         document.getElementById('projectForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -132,7 +139,7 @@
     });
 });
 
-    </script>
+    </script> -->
 </section>    
 
 

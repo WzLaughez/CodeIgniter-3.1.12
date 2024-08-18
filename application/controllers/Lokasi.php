@@ -66,7 +66,8 @@ class Lokasi extends CI_Controller {
     
     
     
-    public function delete(){
-
+    public function delete($id){
+        $this->restclient->delete("/Lokasi/{$id}");
+        redirect('index.php/projects/index');
     }
 }

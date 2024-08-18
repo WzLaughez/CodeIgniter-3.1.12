@@ -70,6 +70,7 @@
                     <th>Country</th>
                     <th>Province</th>
                     <th>City</th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -89,9 +90,25 @@
                                 <td><?php echo $project['lokasi'][0]['negara']; ?></td>
                                 <td><?php echo $project['lokasi'][0]['provinsi']; ?></td>
                                 <td><?php echo $project['lokasi'][0]['kota']; ?></td>
-                            <?php else: ?>
-                                <td colspan="4">No location information</td>
-                            <?php endif; ?>
+                                <?php else: ?>
+                                    <td colspan="4">No location information</td>
+                                    <?php endif; ?>
+                                    <td>
+
+                                        <a>
+                                            <button>
+                                        Edit
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo base_url("index.php/projects/delete/" . $project['id']); ?>">
+                                            <button>
+                                                Delete
+                                            </button>
+                                        </a>
+                                    </td>
+                                        
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -117,6 +134,7 @@
                     <th>Province</th>
                     <th>City</th>
                     <th>Created At</th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -128,6 +146,21 @@
                             <td><?php echo $location['provinsi']; ?></td>
                             <td><?php echo $location['kota']; ?></td>
                             <td><?php echo $location['created_at']; ?></td>
+                            <td>
+
+                                        <a>
+                                            <button>
+                                        Edit
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo base_url("index.php/lokasi/delete/" . $location['id']); ?>">
+                                            <button>
+                                                Delete
+                                            </button>
+                                        </a>
+                                    </td>
                         </tr>
                     <?php endforeach; ?>
                 
